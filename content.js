@@ -65,5 +65,5 @@ chrome.runtime.onMessage.addListener(function(msg, sender, sendResponse) {
         r.style.setProperty('--tchat-message-hover', '#3e3e3e');
 
     }
-    return msg
+    sendResponse('Success');
 });

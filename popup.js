@@ -1,15 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
-    chrome.tabs.getSelected(null, function(tab){
-        var checkPageButton = document.getElementById('checkPage');
+    chrome.tabs.query({
+        active: true,
+        lastFocusedWindow: true
+    }, function (tabs) {
+        const checkPageButton = document.getElementById('checkPage');
+        if (tabs[0]['url'] !== 'https://www.superblablaland.com/tchat') {
+            return false;
+        }
         checkPageButton.addEventListener('click', function() {
-            chrome.tabs.sendMessage(tab.id,
-            {
-                command: "triggerTchatMod",
-                title: "TchatMod"
-            },
-            function(msg) {
-                console.log('Successfully started script' , msg);
-            });
+            chrome.tabs.sendMessage(tabs[0]['id'],
+                {
+                    command: "triggerTchatMod",
+                    title: "TchatMod"
+                },
+                function() {
+                    console.log('Successfully started TchatMod');
+                });
         });
     });
 });
