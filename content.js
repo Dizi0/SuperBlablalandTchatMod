@@ -21,6 +21,7 @@ chrome.runtime.onMessage.addListener(function(msg, sender, sendResponse) {
                 e.target.style.color = '#00bcd4'
             } else if (msgSent.includes(nickname)) {
                 e.target.style.color = '#18CB00FF';
+                mpNotifSound.play();
             } else if (msgSender.includes('mp de ')) {
                 mpNotifSound.play();
             }
