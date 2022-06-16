@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9df3d54d-3e2a-4f87-9625-4240c4af386a" name="Changes" comment="" />
+    <list default="true" id="9df3d54d-3e2a-4f87-9625-4240c4af386a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content.js" beforeDir="false" afterPath="$PROJECT_DIR$/content.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,6 +43,7 @@
       <recent name="C:\wamp64\www\sbbl_extension\BlurImage" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\SuperBlablalandTchatMod" />
       <recent name="C:\wamp64\www\sbbl_extension\BlurImage" />
     </key>
   </component>
@@ -55,6 +59,8 @@
       <workItem from="1655232137851" duration="1932000" />
       <workItem from="1655285279704" duration="682000" />
       <workItem from="1655324651016" duration="5706000" />
+      <workItem from="1655333542507" duration="1984000" />
+      <workItem from="1655381515108" duration="1630000" />
     </task>
     <servers />
   </component>

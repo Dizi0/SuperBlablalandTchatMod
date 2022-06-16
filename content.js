@@ -3,7 +3,8 @@ chrome.runtime.onMessage.addListener(function(msg, sender, sendResponse) {
     if (msg.command && (msg.command === "triggerTchatMod")) {
         const r = document.querySelector(':root');
         const navbar = document.querySelector('.nav');
-        const nickname = document.querySelector('.nav-menu_right').innerText;
+        const nickname = document.querySelector('.nav-menu_right').innerText.toLowerCase();
+        const mpNotifSound = new Audio('https://minosakali.fr/notif.mp3');
 
         document.querySelector('.simplebar-content-wrapper').setAttribute('id', 'msgBox');
         document.querySelector('.simplebar-content').setAttribute('id', 'scrollSensor');
@@ -12,12 +13,16 @@ chrome.runtime.onMessage.addListener(function(msg, sender, sendResponse) {
         sensor.addEventListener("DOMNodeInserted", function(e) {
             const objDiv = document.getElementById("msgBox");
             objDiv.scrollTop = objDiv.scrollHeight;
-            const msgSender = e.target.innerText.toLowerCase().split(' ')[0].replace(/^\s+|\s+$/g, '');
+            const rawMsg =  e.target.innerText.toLowerCase().split(': ')
+            const msgSender = rawMsg[0].replace(/^\s+|\s+$/g, '');
+            const msgSent = rawMsg[1]
 
-            if (msgSender.toLowerCase() === nickname.toLowerCase()) {
+            if (msgSender === nickname) {
                 e.target.style.color = '#00bcd4'
-            } else if (e.target.innerText.toLowerCase().includes(nickname.toLowerCase())) {
+            } else if (msgSent.includes(nickname)) {
                 e.target.style.color = '#18CB00FF';
+            } else if (msgSender.includes('mp de ')) {
+                mpNotifSound.play();
             }
         }, false);
 
