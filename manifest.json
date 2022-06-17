@@ -1,7 +1,7 @@
 {
     "name": "Super Blablaland TchatMod",
     "author": "Dizio https://github.com/Dizi0",
-    "version": "1.1",
+    "version": "2.0",
     "description": "Un mod pour SuperBlablaland qui ajoute des elements de personalisation au tchat",
     "content_scripts": [{
         "matches": ["<all_urls>"],
