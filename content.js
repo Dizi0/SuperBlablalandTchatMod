@@ -9,7 +9,6 @@ chrome.runtime.onMessage.addListener(function(msg, sender, sendResponse) {
     }
 
     if (msg.command && (msg.command === "triggerTchatMod")) {
-        const r = document.querySelector(':root');
         const navbar = document.querySelector('.nav');
         const nickname = document.querySelector('.nav-menu_right').innerText.toLowerCase();
         const mpNotifSound = new Audio('https://minosakali.fr/notif.mp3');
@@ -50,38 +49,45 @@ chrome.runtime.onMessage.addListener(function(msg, sender, sendResponse) {
             sheet.replaceSync('.text-blabla {color: white}');
 
             let body = document.querySelector('body');
+            let root = document.querySelector(':root');
+            let contentSite = document.querySelector('.content-site');
 
             // Apply the stylesheet to a document:
             document.adoptedStyleSheets = [sheet];
             body.style.backgroundColor = '#263238'
 
             body.style.setProperty('background-image', 'unset');
+
             navbar.style.setProperty('position', 'unset');
-            r.style.setProperty('--blue', 'lightblue');
-            r.style.setProperty('--clr-white', '#303030');
-            r.style.setProperty('--clr-black', '#b5b5b5');
-            r.style.setProperty('--clr-input-error', '#eb77db');
-            r.style.setProperty('--clr-input-error-transparent', 'rgba(199, 26, 14, .2)');
-            r.style.setProperty('--clr-input-error-dark', '#270704');
-            r.style.setProperty('--clr-input-error-transparent-dark', 'rgba(39, 7, 4, .2)');
-            r.style.setProperty('--clr-gratos', '#0000ff');
-            r.style.setProperty('--clr-classique', '#00c3ff');
-            r.style.setProperty('--clr-fun', '#00bd00');
-            r.style.setProperty('--clr-choc', '#ffd900');
-            r.style.setProperty('--clr-style', '#ff0000');
-            r.style.setProperty('--clr-super', '#ff24ff');
-            r.style.setProperty('--clr-legendaire', '#8900ff');
-            r.style.setProperty('--clr-staff', '#ff7900');
-            r.style.setProperty('--clr-com', '#4BBF6B');
-            r.style.setProperty('--clr-sm', '#1e88e5');
-            r.style.setProperty('--clr-modo', '#009DDF');
-            r.style.setProperty('--clr-pm', '#6cd3ff');
-            r.style.setProperty('--clr-vip', '#ff24ff');
-            r.style.setProperty('--clr-status-weird', '#bb196a');
-            r.style.setProperty('--clr-status-danger', '#f44251');
-            r.style.setProperty('--clr-status-ban', '#201b1b');
-            r.style.setProperty('--tchat-border', 'rgb(0 0 0/80%');
-            r.style.setProperty('--tchat-message-hover', '#3e3e3e');
+
+            contentSite.style.setProperty('padding' , 'unset');
+            contentSite.style.setProperty('margin-bottom' , '70px');
+
+            root.style.setProperty('--blue', 'lightblue');
+            root.style.setProperty('--clr-white', '#303030');
+            root.style.setProperty('--clr-black', '#b5b5b5');
+            root.style.setProperty('--clr-input-error', '#eb77db');
+            root.style.setProperty('--clr-input-error-transparent', 'rgba(199, 26, 14, .2)');
+            root.style.setProperty('--clr-input-error-dark', '#270704');
+            root.style.setProperty('--clr-input-error-transparent-dark', 'rgba(39, 7, 4, .2)');
+            root.style.setProperty('--clr-gratos', '#0000ff');
+            root.style.setProperty('--clr-classique', '#00c3ff');
+            root.style.setProperty('--clr-fun', '#00bd00');
+            root.style.setProperty('--clr-choc', '#ffd900');
+            root.style.setProperty('--clr-style', '#ff0000');
+            root.style.setProperty('--clr-super', '#ff24ff');
+            root.style.setProperty('--clr-legendaire', '#8900ff');
+            root.style.setProperty('--clr-staff', '#ff7900');
+            root.style.setProperty('--clr-com', '#4BBF6B');
+            root.style.setProperty('--clr-sm', '#1e88e5');
+            root.style.setProperty('--clr-modo', '#009DDF');
+            root.style.setProperty('--clr-pm', '#6cd3ff');
+            root.style.setProperty('--clr-vip', '#ff24ff');
+            root.style.setProperty('--clr-status-weird', '#bb196a');
+            root.style.setProperty('--clr-status-danger', '#f44251');
+            root.style.setProperty('--clr-status-ban', '#201b1b');
+            root.style.setProperty('--tchat-border', 'rgb(0 0 0/80%');
+            root.style.setProperty('--tchat-message-hover', '#3e3e3e');
 
         }
     }
